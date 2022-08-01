@@ -1,0 +1,65 @@
+<odoo>
+    <record model="ir.ui.view" id="opentutorial_course_tree_view">
+        <field name="name">opentutorial course tree view</field>
+        <field name="model">opentutorial.course</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="title"/>
+                <field name="description"/>
+            </tree>
+
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="opentutorial_course_form_view">
+        <field name="name">opentutorial course form view</field>
+        <field name="model">opentutorial.course</field>
+        <field name="arch" type="xml">
+            <form string="Course Form">
+                <group colspan="4">
+                    <group colspan="2" col="2">
+                        <seperator string="title" colspan="2"/>
+                        <field name="title"/>
+                    </group>
+
+                    <notebook colspan="4">
+                        <page string="Description">
+                            <field name="description" />
+                        </page>
+                    </notebook>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="opentutorial_course_search_view">
+        <field name="name">opentutorial course search view</field>
+        <field name="model">opentutorial.course</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="title"/>
+                <field name="description"/>
+            </search>
+
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_course">
+        <field name="name">Courses</field>
+        <field name="res_model">opentutorial.course</field>
+        <field name="view_mode">tree,form</field>
+        <!-- model , external id -->
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('opentutorial.opentutorial_course_tree_view')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('opentutorial.opentutorial_course_form_view')})]"/>
+    </record>
+
+    <menuitem id="menu_courses" name="courses" sequence="10"
+              action="opentutorial.action_course"/>
+
+
+
+
+
+
+</odoo>
