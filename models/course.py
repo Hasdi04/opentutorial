@@ -7,6 +7,7 @@ class Course(models.Model):
     title = fields.Char(required=True)
     description = fields.Char()
 
-    # responsible = Many2one('res.users')
+    responsible = fields.Many2one('res.users')
+    session = fields.One2many('opentutorial.session', 'courses')
 
 

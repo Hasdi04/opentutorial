@@ -6,6 +6,8 @@
             <tree>
                 <field name="title"/>
                 <field name="description"/>
+                <field name="responsible"/>
+                <field name="session"/>
             </tree>
 
         </field>
@@ -20,6 +22,8 @@
                     <group colspan="2" col="2">
                         <seperator string="title" colspan="2"/>
                         <field name="title"/>
+                        <field name="responsible"/>
+                        <field name="session"/>
                     </group>
 
                     <notebook colspan="4">
@@ -39,6 +43,8 @@
             <search>
                 <field name="title"/>
                 <field name="description"/>
+                <field name="responsible"/>
+                <field name="session"/>
             </search>
 
         </field>

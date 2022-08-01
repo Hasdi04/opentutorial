@@ -9,3 +9,10 @@ class session(models.Model):
     start_date = fields.Date()
     duration = fields.Float()
     seats = fields.Integer()
+
+    # related fields
+    instructor = fields.Many2one('res.partner')
+    courses = fields.Many2one('opentutorial.course')
+    # one session have many courses
+    # list of course will appear on courses field in session form
+    attendees = fields.Many2many('res.partner')
