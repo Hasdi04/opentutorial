@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 
 access_opentutorial_course,opentutorial.course,model_opentutorial_course,base.group_user,1,1,1,1
+access_opentutorial_session,opentutorial.session,model_opentutorial_session,base.group_user,1,1,1,1

@@ -7,4 +7,6 @@ class Course(models.Model):
     title = fields.Char(required=True)
     description = fields.Char()
 
+    # responsible = Many2one('res.users')
+
 
