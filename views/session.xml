@@ -1,0 +1,72 @@
+<odoo>
+    <record model="ir.ui.view" id="opentutorial_session_tree_view">
+        <field name="name">opentutorial session tree view</field>
+        <field name="model">opentutorial.session</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="start_date"/>
+                <field name="duration"/>
+                <field name="seats"/>
+            </tree>
+
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="opentutorial_session_form_view">
+        <field name="name">opentutorial session form view</field>
+        <field name="model">opentutorial.session</field>
+        <field name="arch" type="xml">
+            <form string="Session Form">
+                <group colspan="4">
+                    <group colspan="2" col="2">
+                        <seperator colspan="2"/>
+                        <field name="name"/>
+                        <field name="start_date"/>
+                        <field name="duration"/>
+                        <field name="seats"/>
+                    </group>
+
+                    <notebook colspan="4">
+                        <page string="Description">
+                            <field name="description" />
+                        </page>
+                    </notebook>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="opentutorial_session_search_view">
+        <field name="name">opentutorial session search view</field>
+        <field name="model">opentutorial.session</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="start_date"/>
+                <field name="duration"/>
+                <field name="seats"/>
+            </search>
+
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_session">
+        <field name="name">Session</field>
+        <field name="res_model">opentutorial.session</field>
+        <field name="view_mode">tree,form</field>
+        <!-- model , external id -->
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('opentutorial.opentutorial_session_tree_view')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('opentutorial.opentutorial_session_form_view')})]"/>
+    </record>
+
+    <menuitem id="menu_session" name="session" sequence="10"
+              action="opentutorial.action_session"/>
+
+
+
+
+
+
+</odoo>
