@@ -8,5 +8,5 @@ class Partner(models.Model):
     instructor = fields.Boolean(default=False)
     sessions = fields.Many2many('opentutorial.session')
 
-    # teacher = fields.Selection([('Teacher1', 'Level 1'), ('Teacher2', 'Level 2')])
+    teacher = fields.Selection([('Teacher1', 'Level 1'), ('Teacher2', 'Level 2')])
 

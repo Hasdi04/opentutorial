@@ -11,6 +11,8 @@
                 <field name="instructor" />
                 <field name="courses"/>
                 <field name="attendees"/>
+                <field name="taken_seats"/>
+                <field name="active"/>
             </tree>
 
         </field>
@@ -31,6 +33,8 @@
                         <field name="instructor"/>
                         <field name="courses"/>
                         <field name="attendees"/>
+                        <field name="taken_seats"/>
+                        <field name="active"/>
                     </group>
 
                     <notebook colspan="4">
@@ -72,10 +76,4 @@
 
     <menuitem id="menu_session" name="session" sequence="10"
               action="opentutorial.action_session"/>
-
-
-
-
-
-
 </odoo>
