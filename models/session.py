@@ -16,3 +16,11 @@ class session(models.Model):
     # one session have many courses
     # list of course will appear on courses field in session form
     attendees = fields.Many2many('res.partner')
+
+    # DO NOT DELETE
+    def test(self):
+        pass
+
+    # TO DELETE
+    def test2(self):
+        pass
