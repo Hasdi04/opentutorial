@@ -10,6 +10,7 @@
                         <group>
                             <field name="instructor"/>
                             <field name="sessions"/>
+                            <!-- Learn to solve conflict -->
                         </group>
                     </page>
                 </notebook>
