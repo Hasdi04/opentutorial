@@ -11,7 +11,9 @@ class session(models.Model):
     seats = fields.Integer()
 
     # related fields
-    instructor = fields.Many2one('res.partner')
+    instructor = fields.Many2one('res.partner', domain = ['|', ('instructor', '=', True),
+                     ('teacher', 'ilike', "Teacher")])
+
     courses = fields.Many2one('opentutorial.course')
     # one session have many courses
     # list of course will appear on courses field in session form
