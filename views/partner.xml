@@ -11,6 +11,7 @@
                             <field name="instructor"/>
                             <field name="sessions"/>
                             <field name="teacher"/>
+                            <!-- Learn to solve conflict -->
                         </group>
                     </page>
                 </notebook>
