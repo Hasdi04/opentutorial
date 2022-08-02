@@ -1,35 +1,32 @@
- <odoo>
+<odoo>
 
+        <record id="opentutorial_partner_form_view" model="ir.ui.view">
+            <field name="name">partner.instructor</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Inherited_Sessions">
+                        <group>
+                            <field name="instructor"/>
+                            <field name="sessions"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
 
-    <record model="ir.ui.view" id="opentutorial_partner_form_view">
-        <field name="name">opentutorial partner form view</field>
-        <field name="model">res.partner</field>
-        <field name="arch" type="xml">
-            <form string="Partner Form">
-                <group colspan="4">
+        <record model="ir.actions.act_window" id="action_partner">
+            <field name="name">Partner</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+            <!-- model , external id -->
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('opentutorial.opentutorial_partner_form_view')})]"/>
+        </record>
 
-                    <notebook position="inside">
-
-                        <field name="instructor"/>
-                        <field name="sessions"/>
-
-                    </notebook>
-                </group>
-            </form>
-        </field>
-    </record>
-
-     <record model="ir.actions.act_window" id="action_partner">
-        <field name="name">Partner</field>
-        <field name="res_model">res.partner</field>
-        <field name="view_mode">form</field>
-        <!-- model , external id -->
-        <field name="view_ids" eval="[(5, 0, 0),
-            (0, 0, {'view_mode': 'form', 'view_id': ref('opentutorial.opentutorial_partner_form_view')})]"/>
-    </record>
-
-    <menuitem id="menu_partner" name="partner" sequence="10"
-              action="opentutorial.action_partner"/>
+        <menuitem id="menu_partner" name="partner" sequence="10"
+                  action="opentutorial.action_partner"/>
 
 
 </odoo>
