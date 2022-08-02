@@ -25,6 +25,7 @@ class session(models.Model):
     # list of course will appear on courses field in session form
     attendees = fields.Many2many('res.partner')
 
+
     # computed fields
     taken_seats = fields.Char(compute='_taken_seats')
 
@@ -69,4 +70,9 @@ class session(models.Model):
 
 
 
+
+
+     # # DO NOT DELETE
+     # def test(self):
+     #     pass
 
